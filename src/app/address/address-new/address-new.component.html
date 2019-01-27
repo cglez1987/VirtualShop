@@ -1,0 +1,60 @@
+<div class="addressFormNew">
+  <h2>Add Address</h2>
+  <br>
+  <form [formGroup]="addressForm" (ngSubmit)="addAddress()">
+    <div class="row">
+      <div class="form-group">
+        <label for="street">Street *</label>
+        <input type="text" formControlName="street" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.street.errors }" />
+        <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+          <div *ngIf="f.street.errors.required">Street is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="number">Number *</label>
+        <input type="text" formControlName="number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.number.errors }" />
+        <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+          <div *ngIf="f.number.errors.required">Number is required</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="city">City *</label>
+        <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+        <div *ngIf="f.city.errors" class="invalid-feedback">
+          <div *ngIf="f.city.errors.required">City is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="state">State *</label>
+        <input type="text" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
+        <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+          <div *ngIf="f.state.errors.required">State is required</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="zipCode">Zip Code *</label>
+        <input type="text" formControlName="zipCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zipCode.errors }" />
+        <div *ngIf="submitted && f.zipCode.errors" class="invalid-feedback">
+          <div *ngIf="f.zipCode.errors.required">Zip Code is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="country">Country *</label>
+        <input type="tel" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
+        <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+          <div *ngIf="f.country.errors.required">Country is required</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Add</button>
+        <a routerLink="/admin/address" (click)="cancel()" class="btn btn-link">Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>

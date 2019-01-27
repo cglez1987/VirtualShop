@@ -1,0 +1,52 @@
+<div>
+  <h2>Update Customer</h2>
+  <form [formGroup]="userForm" (ngSubmit)="updateUser()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" formControlName="username" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name *</label>
+      <input type="text" formControlName="firstName" class="form-control" [ngClass]="{'is-invalid': f.firstName.errors && (f.firstName.dirty || submitted)}" />
+      <div *ngIf="(f.firstName.dirty || f.firstName.touched || submitted) && f.firstName.errors" class="invalid-feedback">
+        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name *</label>
+      <input type="text" formControlName="lastName" class="form-control" [ngClass]="{'is-invalid': f.lastName.errors && (f.lastName.dirty || submitted)}" />
+      <div *ngIf="(f.lastName.dirty || f.lastName.touched || submitted) && f.lastName.errors" class="invalid-feedback">
+        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password *</label>
+      <input type="password" formControlName="password" class="form-control" [ngClass]="{'is-invalid': f.password.errors && (f.password.dirty || submitted)}" />
+      <div *ngIf="(f.password.dirty || f.password.touched || submitted) && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone *</label>
+      <input type="text" formControlName="phone" class="form-control" [ngClass]="{'is-invalid': f.phone.errors && (f.phone.dirty || submitted)}" />
+      <div *ngIf="(f.phone.dirty || f.phone.touched || submitted) && f.phone.errors" class="invalid-feedback">
+        <div *ngIf="f.phone.errors.required">Phone is required</div>
+        <div *ngIf="f.phone.errors.exists">Phone exists</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" formControlName="email" class="form-control" [ngClass]="{'is-invalid': f.email.errors && (f.email.dirty || submitted)}" />
+      <div *ngIf="(f.email.dirty || f.email.touched || submitted) && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.email">Enter a valid email</div>
+        <div *ngIf="f.email.errors.exists">Email exists</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Update</button>
+      <a routerLink="/admin/users" class="btn btn-link">Cancel</a>
+    </div>
+  </form>
+</div>

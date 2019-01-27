@@ -1,0 +1,9 @@
+<h2>Products</h2>
+
+<div class="grid grid-pad" *ngIf="products">
+    <a *ngFor="let product of products" class="col-1-4" routerLink="/product/{{product.id}}">
+        <div class="module hero">
+            {{product.description}}
+        </div> 
+    </a>
+</div>

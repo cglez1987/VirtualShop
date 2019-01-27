@@ -1,0 +1,16 @@
+.addressFormNew{
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    display: grid;
+    grid-area: initial;
+    justify-content: center;
+}
+
+.form-control{
+    display: block;
+}
+
+.form-group{
+    margin-right: 10px;
+}

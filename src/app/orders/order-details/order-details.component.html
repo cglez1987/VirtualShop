@@ -1,0 +1,60 @@
+<h3>Order Details</h3><br>
+<div id="orderDetails">
+    <div class="row" id="orderInfo">
+        <span class="orderInfoSpan">Ordered on {{order.date | date}} </span>
+        <span class="orderInfoSpan">|</span>
+        <span class="orderInfoSpan">Order# {{order.number}} </span>
+    </div>
+    <div class="row" id="order-summary">
+        <div class="order-summary-column">
+            <h5 class="spacing-micro">Shipping Address</h5>
+            <div class="displayAddress">
+                <ul class="list-address">
+                    <li>{{shippingAddress.street}}</li>
+                    <li>{{shippingAddress.number}}</li>
+                    <li>{{shippingAddress.city}}, {{shippingAddress.state}}</li>
+                    <li>{{shippingAddress.zipCode}}</li>
+                    <li>{{shippingAddress.country}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="order-summary-column">
+            <h5 class="spacing-micro">Payment Method</h5>
+            <div class="displayAddress">
+                <span>{{order.paymentType}}</span>
+            </div>
+        </div>
+        <div class="order-summary-column-final">
+            <h5 class="spacing-micro">Total: </h5>
+            <div class="displayAddress">
+                <span>{{order.totalValue | currency}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="productsList">
+        <div class="product-list">
+            <h5>Products</h5>
+            <table class="table">
+                <thead class="head_table-products">
+                    <tr class="row">
+                        <th class="col">Name</th>
+                        <th class="col">Price</th>
+                        <th class="col">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prod of order.products" class="row">
+                        <td class="col">{{prod.product.description}}</td>
+                        <td class="col">{{prod.product.price | currency}}</td>
+                        <td class="col">{{prod.quantity}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 ">
+            <button class="btn-secondary" (click)="goBack()">Back</button>
+        </div>
+    </div>
+</div>

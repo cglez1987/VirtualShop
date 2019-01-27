@@ -1,0 +1,133 @@
+ul{
+    list-style: none;
+    margin-top: 10px;
+    margin-left: 1px;
+    line-height: 19px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    box-sizing: border-box;
+}
+
+.address-column{
+    margin-top: 10px;
+    float: left;
+    min-height: 1px;
+    overflow: visible;
+    margin-right: 25px;
+    width: auto;
+    width: 300px;
+    border-width: 2px;
+    box-sizing: border-box;
+    border-color: #C7C7C7;
+    box-shadow: 0 2px 1px 0 rgba(0,0,0,.16);
+    border-style: solid;
+    height: 160px;
+}
+
+.add-address-column{
+  margin-top: 10px;
+  float: left;
+  min-height: 1px;
+  overflow: visible;
+  margin-right: 25px;
+  width: auto;
+  width: 300px;
+  border-width: 2px;
+  box-sizing: border-box;
+  border-color: #C7C7C7;
+  box-shadow: 0 2px 1px 0 rgba(0,0,0,.16);
+  border-style: dashed;
+  height: 160px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#add-address-icon{
+  width: 50px;
+  height: 50px;
+}
+
+.row{
+    display: table-row;
+}
+
+.address-links{
+    margin-right: -15px;
+    text-align: left;
+    margin-left: 40px;
+    display: table;
+}
+
+
+
+
+/* DashboardComponent's private CSS styles */
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  [class*='col-']:last-of-type {
+    padding-right: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  *, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  h4 {
+    position: relative;
+  }
+  .grid {
+    margin: 0;
+  }
+  .col-1-4 {
+    width: 25%;
+  }
+  .module {
+    padding: 20px;
+    text-align: center;
+    color: #eee;
+    max-height: 120px;
+    min-width: 120px;
+    background-color: rgb(101, 102, 102);
+    border-radius: 2px;
+  }
+  .module:hover {
+    background-color: rgb(226, 205, 205);
+    cursor: pointer;
+    color: #4d778b;
+  }
+  .grid-pad {
+    padding: 10px 0;
+  }
+  .grid-pad > [class*='col-']:last-of-type {
+    padding-right: 20px;
+  }
+  @media (max-width: 600px) {
+    .module {
+      font-size: 10px;
+      max-height: 75px; }
+  }
+  @media (max-width: 1024px) {
+    .grid {
+      margin: 0;
+    }
+    .module {
+      min-width: 60px;
+    }
+  }
+  
+  
+  /*
+  Copyright 2017-2018 Google Inc. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at http://angular.io/license
+  */

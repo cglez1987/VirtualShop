@@ -1,0 +1,30 @@
+<div *ngIf="!newAddress">
+  <h2>Yours Addresses</h2>
+  <br>
+  <div class="row" *ngIf="addresses">
+    <div class="add-address-column">
+      <a [routerLink]="['./add']" (click)="addAddress()">
+        <div id="add-address-icon"></div>
+        <h5>Add Address</h5>
+      </a>
+    </div>
+    <div *ngFor="let address of addresses" class="row address-column">
+      <div class="row">
+        <ul>
+          <li>{{address.street}}</li>
+          <li>{{address.number}}</li>
+          <li>{{address.city}}, {{address.state}}</li>
+          <li>{{address.zipCode}}</li>
+          <li>{{address.country}}</li>
+        </ul>
+      </div>
+      <div class="address-links row">
+        <a (click)="deleteAddress(address)" [routerLink]="['./delete']">Delete</a>
+        <span *ngIf="!address.default">  |  </span>
+        <a *ngIf="!address.default" (click)="setDefault(address.id)" [routerLink]="['./default']">Set As Default</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-address-new *ngIf="newAddress"></app-address-new>

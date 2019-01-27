@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2>Yours Orders</h2>
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-primary btn-create-order" (click)="validateCreateOrder()" [routerLink]="userCanCreateOrder ? ['/orders/new'] : []">Create Order</button>
+  </div>
+</div>
+<div class="row order-list" *ngIf="orders">
+  <div *ngFor="let order of orders" class="order-column">
+    <div class="col-md-4">
+      <div>
+        <span>Order Placed</span>
+      </div>
+      <div>
+        {{order.date | date: 'longDate'}}
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div>
+        <span>Total</span>
+      </div>
+      <div>
+        {{order.totalValue | currency}}
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div>
+        <span>Order# {{order.number}}</span>
+      </div>
+      <div class="order-links">
+        <ul>
+          <span><a [routerLink]="['details', order.number]">Order Details</a></span>
+          <span class="orderInfoSpan">|</span>
+          <span><a (click)="deleteOrder(order.number)" [routerLink]="['./delete']">Delete</a></span>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

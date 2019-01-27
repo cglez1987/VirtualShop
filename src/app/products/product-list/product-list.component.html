@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="container col-md-8">
+    <h2>Products List</h2>
+    <br />
+    <br />
+    <table class="table" *ngIf="!isEmpty()">
+      <thead>
+        <tr class="row">
+          <th class="col">Description</th>
+          <th class="col">Price</th>
+          <th class="col">Weight</th>
+          <th class="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products" class="row">
+          <td class="col"><a [routerLink]="[ '/editProduct', product.id ]">{{product.description}}</a></td>
+          <td class="col">{{product.price | currency}}</td>
+          <td class="col">{{product.weight}}</td>
+          <td class="col"><button (click)="deleteProduct(product.id)" class="btn-dark">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="isEmpty()">Product records not found</p>
+  </div>
+
+  <div class="col-md-4">
+    <app-product-new (reloadProducts)="loadAllProducts()"></app-product-new>
+  </div>
+</div>

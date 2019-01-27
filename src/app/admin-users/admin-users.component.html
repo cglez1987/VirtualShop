@@ -1,0 +1,29 @@
+<h2>Customers List</h2>
+<br />
+<br />
+<div class="container">
+  <table class="table" *ngIf="isUsersEmpty()">
+    <thead>
+      <tr class="row">
+        <th class="col">FirtName</th>
+        <th class="col">LastName</th>
+        <th class="col">Email</th>
+        <th class="col">Phone</th>
+        <th class="col"></th>
+        <th class="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" class="row">
+        <td class="col">{{user.firstName}}</td>
+        <td class="col">{{user.lastName}}</td>
+        <td class="col">{{user.email}}</td>
+        <td class="col">{{user.phone}}</td>
+        <td class="col"><a [routerLink]="[ '/editUser', user.id ]" class="text-success">Edit</a></td>
+        <td class="col"><a (click)="deleteUser(user.id)" class="text-danger">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p *ngIf="users.size">User records not found</p>

@@ -1,0 +1,11 @@
+<div class="row"> 
+  <div [hidden]="!chartUsers" class="graph">
+    <h5>Top Customers</h5>
+    <canvas id="reportUsers">{{ chartUsers }}</canvas>
+  </div>
+
+  <div [hidden]="!chartProducts" class="graph">
+    <h5>Top Selling Products</h5>
+    <canvas id="reportProducts">{{ chartProducts }}</canvas>
+  </div>
+</div>

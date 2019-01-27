@@ -1,0 +1,15 @@
+.orderForm{
+    width: 50%;
+}
+
+.prodForm{
+    width: 50%;
+}
+
+#paymentType{
+    width: auto;
+}
+
+#quantity{
+    width: auto;
+}

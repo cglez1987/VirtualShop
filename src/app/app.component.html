@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="collapse navbar-collapse">
+    <a class="nav-item nav-link" [routerLink]="[ '/' ]">Home</a>
+    <a class="nav-item nav-link" routerLink="/admin/orders" *ngIf="currentUser">Orders</a>
+    <a class="nav-item nav-link" [routerLink]="[ '/admin/products' ]" *ngIf="currentUser">Products</a>
+    <a class="nav-item nav-link" routerLink="/admin/address" *ngIf="currentUser">MyAddress</a>
+    <a class="nav-item nav-link" routerLink="/admin/users" *ngIf="currentUser">Customers</a>
+    <a class="nav-item nav-link" routerLink="/report" *ngIf="currentUser">Report</a>
+  </div>
+  <div class="nav navbar-right">
+    <a class="nav-item nav-link" routerLink="/" (click)="logout()" *ngIf="currentUser">Logout</a>
+    <a class="nav-item nav-link" routerLink="/login" *ngIf="!currentUser">Login</a>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container">
+    <alert></alert>
+    <router-outlet></router-outlet>
+  </div>
+</div>
